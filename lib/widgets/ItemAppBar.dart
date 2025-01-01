@@ -20,7 +20,7 @@ class ItemAppBar extends StatelessWidget{
         ),
         Padding(
             padding: EdgeInsets.only(left: 20),
-            child: Text( ""),
+            child: Text(""),
             ),  
       ],
       ),

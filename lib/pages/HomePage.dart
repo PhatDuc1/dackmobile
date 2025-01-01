@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
         children: [
           HomeAppBar(),
           Container(
+            
             padding: EdgeInsets.only(top: 15),
             decoration: BoxDecoration(
               color: Color(0xFFEDECF2),
@@ -21,6 +22,7 @@ class HomePage extends StatelessWidget {
                 topRight: Radius.circular(35),
               ),
             ),
+          
             child: Column(
               children: [
                 // Tìm kiếm
@@ -33,8 +35,12 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: Row(
+
                     children: [
-                      Expanded(
+                      Container(
+                        margin: EdgeInsets.only(left: 5),
+                        height: 50,
+                        width: 300,
                         child: TextFormField(
                           decoration: InputDecoration(
                             border: InputBorder.none,
@@ -65,7 +71,6 @@ class HomePage extends StatelessWidget {
                 Container(
                   alignment: Alignment.centerLeft,
                   margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                
                   child: Text(
                     "Phim Nổi Bật Tháng 12",
                     style: TextStyle(
@@ -73,7 +78,7 @@ class HomePage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF4C53A5),
                     ),
-                  ),  
+                  ),
                 ),
                 // Các mục nổi bật
                 ItemsWidget(),
@@ -88,9 +93,10 @@ class HomePage extends StatelessWidget {
         height: 50,
         color: Color(0xFF4C53A5),
         items: [
-          Icon(Icons.home, size: 30, color: Colors.white),
-          Icon(CupertinoIcons.cart_fill, size: 30, color: Colors.white),
-          Icon(Icons.list, size: 30, color: Colors.white),
+          Icon(Icons.home, size: 30, color: Colors.white,),
+          Icon(CupertinoIcons.cart_fill, size: 30, color: Colors.white,),
+          Icon(Icons.list, size: 30, color: Colors.white,
+          ),
         ],
       ),
     );

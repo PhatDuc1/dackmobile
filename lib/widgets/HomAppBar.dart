@@ -14,15 +14,15 @@ class HomeAppBar extends StatelessWidget{
             color: Color(0xFF4C53A5),
           ),
           Padding(
-            padding: EdgeInsets.only
-          (left: 20,
+            padding: EdgeInsets.only(
+          left: 20,
           ),
           child: Text( "Ứng Dụng Đặt Vé Xem Phim!", 
           style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold,
           color: Color(0xFF4C53A5)),
           ),
           ),
-          
+        
         ],
       ),
     );
