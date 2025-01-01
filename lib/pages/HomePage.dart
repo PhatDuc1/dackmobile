@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
                         child: TextFormField(
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "Search here...",
+                            hintText: "Tìm kiếm...",
                           ),
                         ),
                       ),
