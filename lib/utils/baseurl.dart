@@ -1,1 +1,1 @@
-const String baseurl = "http://192.168.1.2/todos/";
+const String baseurl = "http://localhost/server/";
