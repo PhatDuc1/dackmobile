@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +15,6 @@ class HomePage extends StatelessWidget {
         children: [
           HomeAppBar(),
           Container(
-            
             padding: EdgeInsets.only(top: 15),
             decoration: BoxDecoration(
               color: Color(0xFFEDECF2),
@@ -22,7 +23,6 @@ class HomePage extends StatelessWidget {
                 topRight: Radius.circular(35),
               ),
             ),
-          
             child: Column(
               children: [
                 // Tìm kiếm
@@ -35,7 +35,6 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: Row(
-
                     children: [
                       Container(
                         margin: EdgeInsets.only(left: 5),
@@ -81,7 +80,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 // Các mục nổi bật
-                ItemsWidget(),
+                ItemsWidget()
               ],
             ),
           ),
@@ -92,10 +91,21 @@ class HomePage extends StatelessWidget {
         onTap: (index) {},
         height: 50,
         color: Color(0xFF4C53A5),
-        items: [
-          Icon(Icons.home, size: 30, color: Colors.white,),
-          Icon(CupertinoIcons.cart_fill, size: 30, color: Colors.white,),
-          Icon(Icons.list, size: 30, color: Colors.white,
+        items: const [
+          Icon(
+            Icons.home,
+            size: 30,
+            color: Colors.white,
+          ),
+          Icon(
+            CupertinoIcons.cart_fill,
+            size: 30,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.list,
+            size: 30,
+            color: Colors.white,
           ),
         ],
       ),
