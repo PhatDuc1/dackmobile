@@ -75,10 +75,10 @@ class SignupController extends GetxController {
     var res = jsonDecode(response.body);
 
     if (res['success']) {
-      customSnackbar("Success", "ok", "success");
+      customSnackbar("Success", "Sign Up Successful", "success");
       Get.offAllNamed(GetRoutes.login);
     } else {
-      customSnackbar("Error", "no", "error");
+      customSnackbar("Error", "Sign Up Failed", "error");
     }
   }
 }
