@@ -6,7 +6,6 @@ import 'package:dack_mobile/utils/custom_snackbar.dart';
 import 'package:dack_mobile/widgets/Loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:http/http.dart' as http;
 
 class SignupController extends GetxController {
@@ -42,32 +41,30 @@ class SignupController extends GetxController {
   }
 
   checkSignup() {
-    if (nameController.text.isEmpty) {
-      customSnackbar("Error", "Name is required", "error");
-    } else if (addressController.text.isEmpty) {
-      customSnackbar("Error", "Address is required", "error");
-    } else if (contactController.text.isEmpty) {
-      customSnackbar("Error", "Contact is required", "error");
-    } else
+    // if (nameController.text.isEmpty) {
+    //   customSnackbar("Error", "Name is required", "error");
+    // } else if (addressController.text.isEmpty) {
+    //   customSnackbar("Error", "Address is required", "error");
+    // } else if (contactController.text.isEmpty) {
+    //   customSnackbar("Error", "Contact is required", "error");
+    // } else
     if (emailController.text.isEmpty ||
         GetUtils.isEmail(emailController.text) == false) {
       customSnackbar("Error", "A Valid email is required", "error");
     } else if (passwordController.text.isEmpty) {
       customSnackbar("Error", "Password is required", "error");
-    }
-    else if (confirmPasswordController.text.isEmpty) {
-      customSnackbar("Error", "Password is required", "error");
-    }
-    else {
-    Get.showOverlay(asyncFunction: () => signup(), loadingWidget: Loader());
+      // } else if (confirmPasswordController.text.isEmpty) {
+      //   customSnackbar("Error", "Password is required", "error");
+    } else {
+      Get.showOverlay(asyncFunction: () => signup(), loadingWidget: Loader());
     }
   }
 
   signup() async {
     var response = await http.post(Uri.parse('${baseurl}signup.php'), body: {
-      "name": nameController.text,
-      "contact": contactController.text,
-      "address": addressController.text,
+      // "name": nameController.text,
+      // "contact": contactController.text,
+      // "address": addressController.text,
       "email": emailController.text,
       "pass": passwordController.text,
     });
