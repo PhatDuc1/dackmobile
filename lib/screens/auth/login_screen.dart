@@ -12,7 +12,7 @@ import 'package:get/get_state_manager/src/simple/get_state.dart';
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
-  final signupController = Get.put(LoginController());
+  final loginController = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
