@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 class ProductController extends GetxController {
   List<Result> results = [];
   List<Result> searchText = [];
+  List<Result> category = [];
 
   @override
   void onInit() {
@@ -37,6 +38,19 @@ class ProductController extends GetxController {
 
     searchText = results.where((result) {
       return result.ten!.toLowerCase().contains(val.toLowerCase());
+    }).toList();
+
+    update();
+  }
+
+  cate(String id) {
+    if (id == "") {
+      category = results;
+      update();
+      return;
+    }
+    category = results.where((result) {
+      return result.theloaiid! == id;
     }).toList();
 
     update();

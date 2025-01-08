@@ -25,7 +25,7 @@ class ItemsWidget extends StatelessWidget {
         // body: Padding(
         // padding: const EdgeInsets.all(10.0),
         // child: Column(
-        children: controller.searchText
+        children: controller.category
             .map((result) => ListProduct(result: result)
                 // [
                 // for (int i = 1; i < 5; i++)

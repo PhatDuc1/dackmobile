@@ -14,21 +14,56 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        children: [
-          HomeAppBar(),
-          Container(
-              padding: EdgeInsets.only(top: 15),
-              decoration: BoxDecoration(
-                color: Color(0xFFEDECF2),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(35),
-                  topRight: Radius.circular(35),
-                ),
+    return GetBuilder<ProductController>(builder: (controller) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Ứng Dụng Đặt Vé Xem Phim!",
+            style: TextStyle(
+                fontSize: 23,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF4C53A5)),
+          ),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              ListTile(
+                title: const Text('Tất cả phim'),
+                onTap: () => controller.cate(""),
               ),
-              child: GetBuilder<ProductController>(builder: (controller) {
-                return Column(
+              ListTile(
+                title: const Text('Mọi lứa tuổi'),
+                onTap: () => controller.cate("1"),
+              ),
+              ListTile(
+                title: const Text('Trên 13 tuổi'),
+                onTap: () => controller.cate("13"),
+              ),
+              ListTile(
+                title: const Text('Trên 16 tuổi'),
+                onTap: () => controller.cate("16"),
+              ),
+              ListTile(
+                title: const Text('Trên 18 tuổi'),
+                onTap: () => controller.cate("18"),
+              ),
+            ],
+          ),
+        ),
+        body: ListView(
+          children: [
+            // HomeAppBar(),
+            Container(
+                padding: EdgeInsets.only(top: 15),
+                decoration: BoxDecoration(
+                  color: Color(0xFFEDECF2),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(35),
+                    topRight: Radius.circular(35),
+                  ),
+                ),
+                child: Column(
                   children: [
                     // Tìm kiếm
                     Container(
@@ -91,33 +126,33 @@ class HomePage extends StatelessWidget {
                     // Các mục nổi bật
                     ItemsWidget(),
                   ],
-                );
-              })),
-        ],
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.transparent,
-        onTap: (index) {},
-        height: 50,
-        color: Color(0xFF4C53A5),
-        items: const [
-          Icon(
-            Icons.home,
-            size: 30,
-            color: Colors.white,
-          ),
-          Icon(
-            CupertinoIcons.cart_fill,
-            size: 30,
-            color: Colors.white,
-          ),
-          Icon(
-            Icons.list,
-            size: 30,
-            color: Colors.white,
-          ),
-        ],
-      ),
-    );
+                )),
+          ],
+        ),
+        bottomNavigationBar: CurvedNavigationBar(
+          backgroundColor: Colors.transparent,
+          onTap: (index) {},
+          height: 50,
+          color: Color(0xFF4C53A5),
+          items: const [
+            Icon(
+              Icons.home,
+              size: 30,
+              color: Colors.white,
+            ),
+            Icon(
+              CupertinoIcons.cart_fill,
+              size: 30,
+              color: Colors.white,
+            ),
+            Icon(
+              Icons.list,
+              size: 30,
+              color: Colors.white,
+            ),
+          ],
+        ),
+      );
+    });
   }
 }
