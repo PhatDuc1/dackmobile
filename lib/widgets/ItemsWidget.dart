@@ -55,36 +55,36 @@ class ListProduct extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: Color(0xFF4C53A5),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    "-10%",
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )),
-            ],
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+          //     Container(
+          //       padding: EdgeInsets.all(5),
+          //       decoration: BoxDecoration(
+          //         color: Color(0xFF4C53A5),
+          //         borderRadius: BorderRadius.circular(20),
+          //       ),
+          //       // child: Text(
+          //       //   "-10%",
+          //       //   style: TextStyle(
+          //       //     fontSize: 14,
+          //       //     color: Colors.white,
+          //       //     fontWeight: FontWeight.bold,
+          //       //   ),
+          //       // )
+          //     ),
+          //   ],
+          // ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, "itemPage");
+              Navigator.pushNamed(context, "itemPage", arguments: result);
             },
             child: Container(
               margin: EdgeInsets.all(10),
-              child: Image.network(
-                result.hinhanh!,
-                height: 120,
-                width: 120,
-              ),
+              child: Image.network(result.hinhanh!
+                  // height: 100,
+                  // width: 120,
+                  ),
             ),
           ),
           Container(
@@ -101,12 +101,30 @@ class ListProduct extends StatelessWidget {
           ),
           Container(
             alignment: Alignment.centerLeft,
-            child: Text(
-              result.dienvien!,
-              style: TextStyle(
-                fontSize: 15,
-                color: Color(0xFF4C53A5),
-              ),
+            child: Column(
+              children: [
+                Text(
+                  "Thời lượng: ${result.thoiluong!} phút",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Color(0xFF4C53A5),
+                  ),
+                ),
+                Text(
+                  "Ngôn ngữ: ${result.ngonngu!}",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Color(0xFF4C53A5),
+                  ),
+                ),
+                Text(
+                  "Đạo diễn: ${result.daodien!}",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Color(0xFF4C53A5),
+                  ),
+                ),
+              ],
             ),
           ),
           Padding(
@@ -114,14 +132,14 @@ class ListProduct extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Text(
-                  "200.000 VND",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF4C53A5),
-                  ),
-                ),
+                // Text(
+                //   "200.000 VND",
+                //   style: TextStyle(
+                //     fontSize: 16,
+                //     fontWeight: FontWeight.bold,
+                //     color: Color(0xFF4C53A5),
+                //   ),
+                // ),
                 Icon(
                   Icons.shopping_cart_checkout,
                   color: Color(0xFF4C53A5),
