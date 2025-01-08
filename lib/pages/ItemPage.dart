@@ -164,8 +164,7 @@ class ItemPage extends StatelessWidget {
                           Row(
                             children: [
                               Container(
-                                height: 40,
-                                width: 100,
+                                height: 20,
                                 alignment: Alignment.center,
                                 margin: EdgeInsets.symmetric(horizontal: 0),
                                 decoration: BoxDecoration(
@@ -210,7 +209,6 @@ class ItemPage extends StatelessWidget {
                             children: [
                               Container(
                                 height: 20,
-                                width: 100,
                                 alignment: Alignment.center,
                                 margin: EdgeInsets.symmetric(horizontal: 0),
                                 decoration: BoxDecoration(
@@ -226,6 +224,138 @@ class ItemPage extends StatelessWidget {
                                 ),
                                 child: Text(
                                   result.daodien!,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Diễn viên:",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xFF4C53A5),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                height: 20,
+                                alignment: Alignment.center,
+                                margin: EdgeInsets.symmetric(horizontal: 0),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                  // boxShadow: [
+                                  //   BoxShadow(
+                                  //     color: Colors.grey.withOpacity(0.5),
+                                  //     spreadRadius: 2,
+                                  //     blurRadius: 8,
+                                  //   ),
+                                  // ]
+                                ),
+                                child: Text(
+                                  result.dienvien!,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Thời lượng:",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xFF4C53A5),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                height: 20,
+                                alignment: Alignment.center,
+                                margin: EdgeInsets.symmetric(horizontal: 0),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                  // boxShadow: [
+                                  //   BoxShadow(
+                                  //     color: Colors.grey.withOpacity(0.5),
+                                  //     spreadRadius: 2,
+                                  //     blurRadius: 8,
+                                  //   ),
+                                  // ]
+                                ),
+                                child: Text(
+                                  "${result.thoiluong!} phút",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Ngôn ngữ:",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xFF4C53A5),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                height: 20,
+                                alignment: Alignment.center,
+                                margin: EdgeInsets.symmetric(horizontal: 0),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                  // boxShadow: [
+                                  //   BoxShadow(
+                                  //     color: Colors.grey.withOpacity(0.5),
+                                  //     spreadRadius: 2,
+                                  //     blurRadius: 8,
+                                  //   ),
+                                  // ]
+                                ),
+                                child: Text(
+                                  result.ngonngu!,
                                   style: TextStyle(
                                     fontSize: 15,
                                   ),

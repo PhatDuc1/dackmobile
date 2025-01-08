@@ -25,7 +25,7 @@ class ItemsWidget extends StatelessWidget {
         // body: Padding(
         // padding: const EdgeInsets.all(10.0),
         // child: Column(
-        children: controller.results
+        children: controller.searchText
             .map((result) => ListProduct(result: result)
                 // [
                 // for (int i = 1; i < 5; i++)
@@ -55,26 +55,25 @@ class ListProduct extends StatelessWidget {
       ),
       child: Column(
         children: [
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //   children: [
-          //     Container(
-          //       padding: EdgeInsets.all(5),
-          //       decoration: BoxDecoration(
-          //         color: Color(0xFF4C53A5),
-          //         borderRadius: BorderRadius.circular(20),
-          //       ),
-          //       // child: Text(
-          //       //   "-10%",
-          //       //   style: TextStyle(
-          //       //     fontSize: 14,
-          //       //     color: Colors.white,
-          //       //     fontWeight: FontWeight.bold,
-          //       //   ),
-          //       // )
-          //     ),
-          //   ],
-          // ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF4C53A5),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    "-10%",
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )),
+            ],
+          ),
           InkWell(
             onTap: () {
               Navigator.pushNamed(context, "itemPage", arguments: result);
