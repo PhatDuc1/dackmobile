@@ -16,16 +16,11 @@ class ItemsWidget extends StatelessWidget {
         return Center(child: Text('No items found'));
       }
       return GridView.count(
-        childAspectRatio: 0.68,
-        // it disable the scroll funcitonlity of gridview
-        // then it will scroll in list view of home page
+        childAspectRatio: 0.5,
         physics: NeverScrollableScrollPhysics(),
-        crossAxisCount: 2,
+        crossAxisCount: 4,
         shrinkWrap: true,
-        // body: Padding(
-        // padding: const EdgeInsets.all(10.0),
-        // child: Column(
-        children: controller.category
+        children: controller.searchAndCate
             .map((result) => ListProduct(result: result)
                 // [
                 // for (int i = 1; i < 5; i++)
@@ -55,25 +50,7 @@ class ListProduct extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: Color(0xFF4C53A5),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    "-10%",
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )),
-            ],
-          ),
+          
           InkWell(
             onTap: () {
               Navigator.pushNamed(context, "itemPage", arguments: result);

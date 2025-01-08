@@ -22,7 +22,7 @@ class ItemAppBar extends StatelessWidget{
         Padding(
             padding: EdgeInsets.only(left: 20),
             child: Text(
-              "Product",
+              "Chi Tiết Phim",
              style: TextStyle(fontSize: 23,
               fontWeight: FontWeight.bold,
              color: Color(0xFF4C53A5),

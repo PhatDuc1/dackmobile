@@ -18,20 +18,21 @@ class LoginController extends GetxController {
     passwordController = TextEditingController();
   }
 
-  @override
-  void onClose() {
-    super.onClose();
-    emailController.dispose();
-    passwordController.dispose();
-  }
+  // @override
+  // void onClose() {
+  //   super.onClose();
+  //   emailController.dispose();
+  //   passwordController.dispose();
+  // }
 
   checkLogin() {
-    // if (nameController.text.isEmpty) {
-    //   customSnackbar("Error", "Name is required", "error");
-    // } else if (addressController.text.isEmpty) {
-    //   customSnackbar("Error", "Address is required", "error");
-    Get.showOverlay(
+    if (emailController.text.isEmpty) {
+      customSnackbar("Error", "Name is required", "error");
+    } else if (passwordController.text.isEmpty) {
+      customSnackbar("Error", "Address is required", "error");
+    }else {Get.showOverlay(
         asyncFunction: () => login(), loadingWidget: const Loader());
+  }
   }
 
   login() async {
@@ -43,7 +44,7 @@ class LoginController extends GetxController {
 
     if (res['success']) {
       customSnackbar("Success", res['message'], "success");
-      // Get.offAllNamed(GetRoutes.home);
+       Get.offAllNamed(GetRoutes.home);
     } else {
       customSnackbar("Error", res['message'], "error");
     }

@@ -10,6 +10,8 @@ class ProductController extends GetxController {
   List<Result> searchText = [];
   List<Result> category = [];
 
+  List<Result> searchAndCate = [];
+
   @override
   void onInit() {
     super.onInit();
@@ -23,10 +25,19 @@ class ProductController extends GetxController {
 
     if (res['success']) {
       results = Product.fromJson(res).result!;
-      searchText = Product.fromJson(res).result!;
+      searchAndCate = Product.fromJson(res).result!;
       update();
       // print(results);
     }
+  }
+
+  searchCate(String val, String id) {
+    searchAndCate = results.where((result) {
+      return result.ten!.toLowerCase().contains(val.toLowerCase()) &&
+          (id.isEmpty || result.theloaiid == id);
+    }).toList();
+
+    update();
   }
 
   search(String val) {
@@ -49,7 +60,8 @@ class ProductController extends GetxController {
       update();
       return;
     }
-    category = results.where((result) {
+
+    category = searchText.where((result) {
       return result.theloaiid! == id;
     }).toList();
 

@@ -30,23 +30,23 @@ class HomePage extends StatelessWidget {
             children: [
               ListTile(
                 title: const Text('Tất cả phim'),
-                onTap: () => controller.cate(""),
+                onTap: () => controller.searchCate("", ""),
               ),
               ListTile(
                 title: const Text('Mọi lứa tuổi'),
-                onTap: () => controller.cate("1"),
+                onTap: () => controller.searchCate("","1"),
               ),
               ListTile(
                 title: const Text('Trên 13 tuổi'),
-                onTap: () => controller.cate("13"),
+                onTap: () => controller.searchCate("","13"),
               ),
               ListTile(
                 title: const Text('Trên 16 tuổi'),
-                onTap: () => controller.cate("16"),
+                onTap: () => controller.searchCate("","16"),
               ),
               ListTile(
                 title: const Text('Trên 18 tuổi'),
-                onTap: () => controller.cate("18"),
+                onTap: () => controller.searchCate("","18"),
               ),
             ],
           ),
@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
                               width: 300,
                               child: TextFormField(
                                 onChanged: (val) {
-                                  controller.search(val);
+                                  controller.searchCate(val, "");
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
@@ -95,11 +95,11 @@ class HomePage extends StatelessWidget {
                         )),
                     // Tiêu đề "Xem Phim Ngay!"
                     Container(
-                      alignment: Alignment.centerLeft,
+                      alignment: Alignment.center,
                       margin:
                           EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                       child: Text(
-                        "Xem Phim Ngay!",
+                        "Phim Sắp Ra Mắt!",
                         style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
@@ -109,15 +109,15 @@ class HomePage extends StatelessWidget {
                     ),
                     // Danh mục
                     CategoriesWidget(),
-                    // Tiêu đề "Phim Nổi Bật Tháng 12"
+                    // Tiêu đề "Phim Nổi Bật Tháng 1"
                     Container(
                       alignment: Alignment.centerLeft,
                       margin:
                           EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                       child: Text(
-                        "Phim Nổi Bật Tháng 12",
+                        "Phim Nổi Bật Tháng 1",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 35,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF4C53A5),
                         ),

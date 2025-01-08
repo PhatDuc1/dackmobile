@@ -7,7 +7,7 @@ class CategoriesWidget extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          for(int i=1; i<5; i++)
+          for(int i=1; i<4; i++)
         Container(
           margin: EdgeInsets.symmetric(horizontal: 10),
           padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -19,17 +19,11 @@ class CategoriesWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                "images/$i.png", 
-              width: 100, 
-              height: 100,
+                "images/$i.jpg", 
+              width: 300, 
+              height: 300,
               ),
-              Text("Em Chưa 18",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-                color: Color(0xFF4C63A5),
-              ),
-              )
+              
             ],
             ), 
         )
