@@ -70,7 +70,7 @@ class ListProduct extends StatelessWidget {
               result.ten!,
               style: TextStyle(
                 fontSize: 18,
-                color: Color(0xFF4C53A4),
+                color: Color(0xFF4C53A4), 
                 fontWeight: FontWeight.bold,
               ),
             ),
